@@ -4,7 +4,7 @@ const Parent = () => {
   return (
     <div>
       <h1>Parent</h1>
-      <Child />
+      <Child color="black" />
     </div>
   );
 };
