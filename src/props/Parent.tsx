@@ -1,11 +1,12 @@
-import { Child } from "./Child";
+import { Child, ChildAsFC } from "./Child";
 
 const Parent = () => {
   return (
-    <div>
-      <h1>Parent</h1>
-      <Child color="black" />
-    </div>
+    <>
+      <ChildAsFC color="black" onClick={() => console.log("onClick")}>
+        kjlkjlk
+      </ChildAsFC>
+    </>
   );
 };
 
