@@ -1,13 +1,6 @@
 import { useState } from "react";
 
-interface Guest {
-  name: string;
-  isConfirmed: boolean;
-  isEditing: boolean;
-  guests: string;
-}
-
-const GuestList: React.FC<Guest> = () => {
+const GuestList: React.FC = () => {
   const [name, setName] = useState<string>("");
   const [guests, setGuests] = useState<string[]>([]);
 
@@ -19,8 +12,13 @@ const GuestList: React.FC<Guest> = () => {
   return (
     <div>
       <h3>GuestList</h3>
+      <ul>
+        {guests.map((guest, index) => (
+          <li key={index}>{guest}</li>
+        ))}
+      </ul>
       <input value={name} onChange={(e) => setName(e.target.value)} />
-      <button>Add Guest</button>
+      <button onClick={onClick}>Add Guest</button>
     </div>
   );
 };
