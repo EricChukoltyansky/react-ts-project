@@ -4,7 +4,7 @@ interface RepoState {
   data: string[];
 }
 
-const reducer = (state: RepoState, action: any) => {
+const reducer = (state: RepoState, action: any): RepoState => {
   switch (action.type) {
     case "search_repos":
       return {
