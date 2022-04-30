@@ -20,8 +20,7 @@ function Filter() {
     "Passion Fruit",
   ];
 
-  const [filterText, setFilterText] = useState("");
-
+const [filterText, setFilterText] = useState("");
   return (
     <div>
       <input

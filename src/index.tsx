@@ -1,7 +1,9 @@
 import ReactDOM from "react-dom";
 import UserSearch from "./states/UserSearch";
 import GuestList from "./states/UserSearch";
-import Filter from "./react-projects/filter/Filter";
+import Filter from "./react-projects/Filter";
+import Counter from "./react-projects/Counter";
+
 
 const App = () => {
   return (
@@ -9,6 +11,7 @@ const App = () => {
       {/* <GuestList />
       <UserSearch /> */}
       <Filter />
+      <Counter/>
     </div>
   );
 };
