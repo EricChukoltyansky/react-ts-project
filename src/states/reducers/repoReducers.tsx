@@ -17,6 +17,10 @@ interface SearchRepoSuccessActions {
   payload: string[];
 }
 
+interface SearchRepoErrorActions {
+  type: 'search_repos_error';
+  payload: string;
+}
 
 const reducer = (state: RepoState, action: any): RepoState => {
   switch (action.type) {
