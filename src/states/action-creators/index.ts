@@ -1,20 +1,34 @@
-import axios from 'axios'
-import { ActionType } from "../action-type"
-import { Action } from "../actions"
+import axios from "axios";
+import { ActionType } from "../action-type";
+import { Action } from "../actions";
 
-const searchRepos = (term: string) => {
-    return async (dispatch: any) => {
-      dispatch({ type: ActionType.SEARCH_REPOS })
+export const searchRepos = (term: string) => {
+  return async (dispatch: any) => {
+    dispatch({ type: ActionType.SEARCH_REPOS });
 
-      try {
-        const response = await axios.get(`https://api.github.com/search/repositories?q=${term}`)
-        dispatch({ type: ActionType.SEARCH_REPOS_SUCCESS, payload: response.data.items })
-      } catch (err) {
-        dispatch({
-            type: ActionType.SEARCH_REPOS_ERROR,
-            payload: err.message
-        })
-      } 
+    try {
+      const { data } = await axios.get(
+        "https://registry.npmjs.org/-/v1/search",
+        {
+          params: {
+            text: term,
+          },
+        }
+      );
+
+      const names = data.objects.map((item: any) => {
+          return item.package.name
+      })
+
+      dispatch({
+          type: ActionType.SEARCH_REPOS_SUCCESS,
+          payload: names
+      })
+    } catch (err) {
+      dispatch({
+        type: ActionType.SEARCH_REPOS_ERROR,
+        payload: err.message,
+      });
     }
-
-}
+  };
+};
