@@ -1,9 +1,10 @@
 import axios from "axios";
 import { ActionType } from "../action-type";
+import { Dispatch } from "redux";
 import { Action } from "../actions";
 
 export const searchRepos = (term: string) => {
-  return async (dispatch: any) => {
+  return async (dispatch: Dispatch<Action>) => {
     dispatch({ type: ActionType.SEARCH_REPOS });
 
     try {
@@ -17,14 +18,14 @@ export const searchRepos = (term: string) => {
       );
 
       const names = data.objects.map((item: any) => {
-          return item.package.name
-      })
+        return item.package.name;
+      });
 
       dispatch({
-          type: ActionType.SEARCH_REPOS_SUCCESS,
-          payload: names
-      })
-    } catch (err) {
+        type: ActionType.SEARCH_REPOS_SUCCESS,
+        payload: names,
+      });
+    } catch (err: any) {
       dispatch({
         type: ActionType.SEARCH_REPOS_ERROR,
         payload: err.message,
