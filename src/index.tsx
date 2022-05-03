@@ -8,10 +8,10 @@ import Counter from "./react-projects/Counter";
 const App = () => {
   return (
     <div>
-      {/* <GuestList />
-      <UserSearch /> */}
-      <Filter />
-      <Counter/>
+      <GuestList />
+      <UserSearch /> 
+      {/* <Filter /> */}
+      {/* <Counter/> */}
     </div>
   );
 };

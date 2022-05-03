@@ -1,5 +1,5 @@
-import {ActionType} from '../action-type';
-import {Action} from '../actions'
+import { ActionType } from "../action-type";
+import { Action } from "../actions";
 
 interface RepoState {
   loading: boolean;
@@ -7,9 +7,16 @@ interface RepoState {
   data: string[];
 }
 
+const initialState = {
+  loading: false,
+  error: null,
+  data: [],
+};
 
-
-const reducer = (state: RepoState, action: Action): RepoState => {
+const reducer = (
+  state: RepoState = initialState,
+  action: Action
+): RepoState => {
   switch (action.type) {
     case ActionType.SEARCH_REPOS:
       return {
