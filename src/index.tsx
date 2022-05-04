@@ -1,17 +1,10 @@
 import ReactDOM from "react-dom";
-import UserSearch from "./states/UserSearch";
-import GuestList from "./states/UserSearch";
-import Filter from "./react-projects/Filter";
-import Counter from "./react-projects/Counter";
-
+import Slider from "./react-projects/Slider/Slider";
 
 const App = () => {
   return (
     <div>
-      <GuestList />
-      <UserSearch /> 
-      {/* <Filter /> */}
-      {/* <Counter/> */}
+      <Slider />
     </div>
   );
 };
