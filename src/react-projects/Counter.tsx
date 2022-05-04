@@ -7,7 +7,6 @@ function Counter() {
     setValue((prevState: number) => (prevState += 1));
   };
 
-  console.log(value);
 
   const decrement = () => {
     setValue((prevState: number) => (prevState -= 1));
