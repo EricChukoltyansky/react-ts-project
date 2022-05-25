@@ -4,13 +4,19 @@ import "./First.css";
 
 function First() {
   const [rotate, setRotate] = React.useState(false);
+  const [scale, setScale] = React.useState(false);
   return (
     <div className="example-container">
       <motion.div
         animate={{ rotate: rotate ? 360 : 0 }}
-        transition={{ duration: 4 }}
+        transition={{ type: "spring", duration: 1 }}
+        initial={{ scale: 0.1 }}
+        whileHover={{ scale: 1.2 }}
         onClick={() => setRotate(!rotate)}
-      >Click me</motion.div>
+        onMouseEnter={() => setScale(true)}
+      >
+        Click me
+      </motion.div>
     </div>
   );
 }

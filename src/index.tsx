@@ -1,10 +1,10 @@
 import ReactDOM from "react-dom";
-import First from "./framer/First";
+import AppComponent from "./components/AppComponent";
 
 const App = () => {
   return (
     <div>
-      <First />
+      <AppComponent />
     </div>
   );
 };

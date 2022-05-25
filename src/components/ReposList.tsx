@@ -1,4 +1,4 @@
-const ReposList = () => {
+const ReposList: React.FC = () => {
   return (
     <>
       <form>
